@@ -6,6 +6,6 @@ Anyway, there are many to create a ML model and deploy it. So there is no generi
 
 To run it, check below:
 
-python -W ignore run.py 
+![alt text](https://github.com/ceste/model_deployment/blob/master/model.png)
 
 
