@@ -1,5 +1,7 @@
 import config
 
+# from log import Log
+
 import pandas as pd
 import numpy as np
 import pickle
@@ -81,6 +83,10 @@ class Pipeline:
 			self.model = self.load_pickle(file)
 
 
+		# print(self.__class__.__name__)
+		print('Pipeline init')
+
+		# log.print('self.__class__.__name__')
 
 	def extract_features(self):
 

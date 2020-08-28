@@ -19,14 +19,14 @@ if __name__ == '__main__':
 
 
 		pipeline = Pipeline(dataframe = data, random_state=random_state, test_size=0.2)
-		pipeline.train()
+		# pipeline.train()
 
-		prediction = Prediction(dataframe = data[0:100], random_state=random_state)
-		predictions, labels = prediction.predict()
+		# prediction = Prediction(dataframe = data[0:100], random_state=random_state)
+		# predictions, labels = prediction.predict()
 
-		print('predictions:',predictions)
-		print('prediction labels:',labels)	
-		print('ground truth:',data[config.TARGET_COLUMN])
+		# print('predictions:',predictions)
+		# print('prediction labels:',labels)	
+		# print('ground truth:',data[config.TARGET_COLUMN])
 
 
 
