@@ -1,3 +1,5 @@
+VERSION = '0.1.0'
+
 DATASET = "loan_final313.csv"
 
 PATH_TO_DATASET = 'data/'
