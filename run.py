@@ -37,10 +37,9 @@ if __name__ == '__main__':
 	dataset_path = Path(config.PATH_TO_DATASET+'/'+config.DATASET)	
 	if dataset_path.exists():		
 
-		# pipeline = Pipeline(user_id=user_id, path_to_dataset=dataset_path, random_state=random_state, test_size=0.2)
-		# pipeline.train()
+		pipeline = Pipeline(user_id=user_id, path_to_dataset=dataset_path, random_state=random_state, test_size=0.2)
+		pipeline.train()
 	
-
 		# data dummy for prediction demo
 		# should be in json format as it will be fed into API, will be managed by controlled later on
 		json_data = pd.read_csv(dataset_path)[0:1].to_json(orient='records')[1:-1].replace('},{', '} {')
