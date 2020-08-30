@@ -25,7 +25,13 @@ def predict():
 	# get data
 	json_data = request.get_json(force=True)
 
-	input_df = pd.json_normalize(json_data)
+	msg = 'json_data: ',json_data
+	log.print(msg)
+
+	user_id = json_data['user_id']
+	random_state = 42	
+
+	input_df = pd.json_normalize(json_data)		
 
 	# save json_data and input_df for debugging purpose, save using unique name
 	json_data_unique_filename = config.PATH_TO_DATASET+utils.get_unique_filename('json_data.json')
@@ -34,16 +40,17 @@ def predict():
 	with open(json_data_unique_filename, 'w') as outfile:
 		json.dump(json_data, outfile)
 
+	input_df = input_df[list(config.ACCEPTABLE_COLUMNS)]
 	input_df.to_csv(input_df_unique_filename, index=False)
-
-	user_id = 'cst'
-	random_state = 42
-
+	
 	prediction = Prediction(user_id, input_df_unique_filename, random_state)
 	predictions, labels = prediction.predict()
 
 	result = {'prediction': int(predictions[0]), 'label': str(labels[0])}
-	# output = {'result': result}
+	
+	#dummy
+	# result = {'prediction': 1, 'label': 'Good Loan'}
+	output = {'result': result}
 	output = result
 
 	msg = __name__+'.'+utils.get_function_caller()+' -> exit'
