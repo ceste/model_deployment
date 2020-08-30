@@ -21,3 +21,6 @@ DROP_THIS = ['id']
 UNNECESSARY_COLUMNS = ['year','issue_d','home_ownership_cat','income_cat','term_cat','application_type_cat','purpose_cat','interest_payment_cat','loan_condition_cat','grade_cat']
 
 TARGET_COLUMN = 'loan_condition'
+
+# edit this according your url
+URL = 'http://127.0.0.1:5000'
