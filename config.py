@@ -23,4 +23,4 @@ UNNECESSARY_COLUMNS = ['year','issue_d','home_ownership_cat','income_cat','term_
 TARGET_COLUMN = 'loan_condition'
 
 # edit this according your url
-URL = 'http://127.0.0.1:5000'
+URL = 'https://cst-model-deployment.herokuapp.com/'
