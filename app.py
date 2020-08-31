@@ -3,6 +3,7 @@ import json
 from pandas.io.json import json_normalize
 
 from flask import Flask, jsonify, request
+import gunicorn
 
 import pickle
 import config, utils
