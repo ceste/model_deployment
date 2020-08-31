@@ -21,8 +21,11 @@ if __name__ == '__main__':
 
 	user_id = args.user
 
-	# local url
+	# # local url
 	url = config.URL
+
+	# heroku url
+	# url = config.HEROKU_URL
 
 	# data dummy
 	dataset_path = Path(config.PATH_TO_DATASET+'/'+config.DATASET)	
@@ -46,6 +49,7 @@ if __name__ == '__main__':
 	send_request = requests.post(url, data)
 	print(send_request)
 
-	print(send_request.json())
+	if send_request.status_code == 200:
+		print(send_request.json())
 
 
