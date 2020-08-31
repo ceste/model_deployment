@@ -8,4 +8,11 @@ To run it, check below:
 
 ![alt text](https://github.com/ceste/model_deployment/blob/master/model.png)
 
+To run this as API:
+
+![alt text](https://github.com/ceste/model_deployment/blob/master/request.png)
+
+Unfortunately, I do not have much resources so I can deploy it on cloud. Try Heroku but I only got limited disk space. 
+
+
 
