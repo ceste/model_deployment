@@ -6,3 +6,4 @@ pandas==1.0.1
 imbalanced_learn==0.6.2
 imblearn==0.0
 scikit_learn==0.23.2
+gunicorn==20.0.4
