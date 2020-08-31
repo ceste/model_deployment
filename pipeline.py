@@ -24,6 +24,8 @@ import imblearn
 from imblearn.over_sampling import SMOTE
 from imblearn.combine import SMOTETomek
 
+from compress_pickle import dump, load
+import io
 
 class Pipeline:
 	
@@ -121,6 +123,11 @@ class Pipeline:
 		file = Path(self.path_to_data_folder+'model_rf_'+self.version+'.pkl')
 		if file.is_file():
 			self.model = self.load_pickle(file)
+
+		file = Path(self.path_to_data_folder+'compressed_model_rf_'+self.version)
+		if file.is_file():
+			self.model = utils.load_compressed_files(file)
+		
 
 
 		# print(self.__class__.__name__)
@@ -434,6 +441,9 @@ class Pipeline:
 		#save model
 		self.save_as_pickle('model_rf_'+self.version+'.pkl',self.model)
 
+		#compress model
+		utils.compress_files(str(self.path_to_data_folder)+'compressed_model_rf_'+self.version, self.model)
+
 		msg = self.__class__.__name__+'.'+utils.get_function_caller()+' -> exit'
 		self.log.print(msg)
 
@@ -464,6 +474,24 @@ class Pipeline:
 		msg = self.__class__.__name__+'.'+utils.get_function_caller()+' -> exit'
 		self.log.print(msg)
 
+	# def compress_files(self, filename, obj):
+
+	# 	msg = self.__class__.__name__+'.'+utils.get_function_caller()+' -> enter'
+	# 	self.log.print(msg)
+
+	# 	fname = self.path_to_dataset+filename
+	# 	dump(obj, fname, compression="lzma", set_default_extension=False)
+
+	# 	msg = self.__class__.__name__+'.'+utils.get_function_caller()+' -> exit'
+	# 	self.log.print(msg)
+
+	# def load_compressed_files(self, filename):
+
+	# 	msg = self.__class__.__name__+'.'+utils.get_function_caller()+' -> enter'
+	# 	self.log.print(msg)
+
+	# 	fname = self.path_to_dataset+filename
+	# 	return load(fname, compression="lzma", set_default_extension=False)
 
 
 	def train(self):
