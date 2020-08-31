@@ -39,6 +39,7 @@ if __name__ == '__main__':
 	
 	data = json.dumps(json_data)
 
+	print(url)
 	r_survey = requests.post(url, data)
 	print(r_survey)
 

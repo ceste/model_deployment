@@ -1,7 +1,8 @@
-requests==2.22.0
-pandas==1.0.1
-Flask==1.1.1
 numpy==1.16.4
+requests==2.22.0
+Flask==1.1.1
+compress_pickle==1.2.0
+pandas==1.0.1
 imbalanced_learn==0.6.2
 imblearn==0.0
 scikit_learn==0.23.2
